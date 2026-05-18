@@ -6,8 +6,9 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl \
-    libpq-dev \
-    && docker-php-ext-install pdo pdo_pgsql
+    sqlite3 \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo pdo_sqlite
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -15,6 +16,14 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
+# Create SQLite database file
+RUN mkdir -p database
+RUN touch database/database.sqlite
+
+# Set permissions
+RUN chmod -R 775 storage bootstrap/cache
+
+# Clear Laravel caches
 RUN php artisan config:clear
 RUN php artisan cache:clear
 RUN php artisan route:clear
