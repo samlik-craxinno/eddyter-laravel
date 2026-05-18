@@ -1,7 +1,7 @@
 import './modal.css';
 
 const root = document.querySelector('.modal-test');
-const apiKey = 'eddyt_p2wIdbf8g23XBz2qcCgqgjHaAKGJUVkDrdFBx219RObYTb6WPPCINzPGF8FcFV6Wzz14tRPCyH2QcF32WYLHRksvda'
+const apiKey = root?.dataset.apiKey ?? '';
 
 const dialog = document.getElementById('editor-modal');
 const openBtn = document.getElementById('modal-open-btn');

@@ -144,7 +144,7 @@ async function openReplyEditor(postId) {
 
         s.instance = init({
             container: `#reply-editor-${postId}`,
-            apiKey: "eddyt_p2wIdbf8g23XBz2qcCgqgjHaAKGJUVkDrdFBx219RObYTb6WPPCINzPGF8FcFV6Wzz14tRPCyH2QcF32WYLHRksvda",
+            apiKey,
             mode: 'edit',
             initialContent: initial,
             onChange: (html) => {
