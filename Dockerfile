@@ -16,16 +16,15 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-# Create SQLite database file
+# Create SQLite database
 RUN mkdir -p database
 RUN touch database/database.sqlite
 
-# Set permissions
+# Permissions
 RUN chmod -R 775 storage bootstrap/cache
 
-# Clear Laravel caches
+# Clear Laravel configs
 RUN php artisan config:clear
-RUN php artisan cache:clear
 RUN php artisan route:clear
 RUN php artisan view:clear
 
