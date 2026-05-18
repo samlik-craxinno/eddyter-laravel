@@ -1,0 +1,189 @@
+.modal-test {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+.modal-test__header {
+    margin-bottom: 1.25rem;
+}
+
+.modal-test__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+}
+
+.modal-test__intro {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.modal-test__settings {
+    margin: 0 0 1rem;
+    padding: 0.85rem 1rem 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.modal-test__legend {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0 0.25rem;
+}
+
+.modal-test__field {
+    margin-top: 0.75rem;
+}
+
+.modal-test__field:first-of-type {
+    margin-top: 0.35rem;
+}
+
+.modal-test__label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.modal-test__radios {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.modal-test__radio {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.modal-test__radio input {
+    margin-top: 0.2rem;
+}
+
+.modal-test__input {
+    font: inherit;
+    width: 6rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+}
+
+.modal-test__hint {
+    margin: 0.4rem 0 0;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.modal-test__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem;
+}
+
+.modal-test__status {
+    color: #15803d;
+    font-size: 0.8125rem;
+}
+
+.modal-test__open {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    border: 1px solid #1a1a1a;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.modal-test__open:hover {
+    opacity: 0.92;
+}
+
+.modal-test__open:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.modal-test__dialog {
+    width: min(100vw - 2rem, 52rem);
+    max-height: min(92vh, 52rem);
+    padding: 0;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    box-shadow: 0 18px 50px rgb(0 0 0 / 0.18);
+}
+
+.modal-test__dialog::backdrop {
+    background: rgb(0 0 0 / 0.45);
+}
+
+.modal-test__dialog-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: min(92vh, 52rem);
+}
+
+.modal-test__dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.modal-test__dialog-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-test__close {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+}
+
+.modal-test__close:hover {
+    background: #f5f5f5;
+}
+
+.modal-test__dialog-body {
+    padding: 0.75rem 1rem 1rem;
+    /* overflow: auto; */
+    min-height: 0;
+    flex: 1;
+    /* max-height test: cap scroll area; editor maxHeight also set via SDK when static */
+    /* max-height: var(--modal-body-max, min(70vh, 28rem)); */
+}
+
+.modal-test__editor-host {
+    min-height: 12rem;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    overflow: auto;
+}
+
+.modal-test__settings:disabled,
+.modal-test__settings[disabled] {
+    opacity: 0.55;
+    pointer-events: none;
+}

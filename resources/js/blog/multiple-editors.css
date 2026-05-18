@@ -1,0 +1,121 @@
+.multi-editors {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.multi-editors__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.multi-editors__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.multi-editors__hint {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.editor-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.125rem 1.125rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.03);
+}
+
+.editor-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.editor-card__label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.editor-card__description {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #666;
+}
+
+.editor-card__editor {
+    margin-top: 0.35rem;
+    min-height: 12rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.editor-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.editor-card__btn {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.editor-card__btn:hover {
+    background: #f5f5f5;
+}
+
+.editor-card__status {
+    font-size: 0.8125rem;
+    color: #15803d;
+}
+
+.editor-card__preview-section {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.editor-card__preview-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #666;
+    margin: 0;
+}
+
+.editor-card__preview {
+    padding: 0.75rem 0.875rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fafafa;
+    min-height: 2.5rem;
+}
+
+.editor-card__preview:empty::before {
+    content: 'Nothing to preview yet.';
+    color: #999;
+    font-size: 0.875rem;
+}

@@ -1,0 +1,143 @@
+.lifecycle-page {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+.lifecycle-page__header {
+    margin-bottom: 1.25rem;
+}
+
+.lifecycle-page__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+}
+
+.lifecycle-page__intro {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #555;
+    max-width: 48rem;
+    line-height: 1.5;
+}
+
+.lifecycle-page__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.lifecycle-page__btn {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.45rem 0.95rem;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    color: #111;
+}
+
+.lifecycle-page__btn:hover {
+    background: #f5f5f5;
+}
+
+.lifecycle-page__btn--primary {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+.lifecycle-page__btn--primary:hover {
+    opacity: 0.92;
+    background: #1a1a1a;
+}
+
+.lifecycle-page__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .lifecycle-page__grid {
+        grid-template-columns: 1fr minmax(16rem, 22rem);
+        align-items: start;
+    }
+}
+
+.lifecycle-page__section-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #666;
+    margin: 0 0 0.5rem;
+}
+
+.lifecycle-page__editor {
+    min-height: 22rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.lifecycle-page__stats {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.lifecycle-page__stat {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.35rem 1rem;
+    align-items: baseline;
+    padding: 0.5rem 0.65rem;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.lifecycle-page__stat dt {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #555;
+}
+
+.lifecycle-page__stat dd {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.lifecycle-page__log-wrap {
+    max-height: min(50vh, 28rem);
+    overflow: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.lifecycle-page__log {
+    margin: 0;
+    padding: 0.65rem 0.65rem 0.65rem 1.75rem;
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    line-height: 1.45;
+    list-style-position: outside;
+}
+
+.lifecycle-page__log li {
+    margin: 0 0 0.35rem;
+    word-break: break-word;
+}
+
+.lifecycle-page__log li time {
+    color: #737373;
+    margin-right: 0.35rem;
+}
