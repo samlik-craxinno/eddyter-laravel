@@ -15,6 +15,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
+                'resources/css/nav-sidebar.css',
                 'resources/js/app.js',
                 'resources/js/editor/basic.js',
                 'resources/js/editor/lifecycle.js',
