@@ -1,4 +1,4 @@
-@extends('layouts.minimal')
+@extends('layouts.app')
 
 @push('vite')
     @vite(['resources/js/blog/create.js'])

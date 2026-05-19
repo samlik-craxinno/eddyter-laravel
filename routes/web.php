@@ -3,11 +3,11 @@
 use App\Http\Controllers\BlogCreateController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::view('/editor', 'editor.basic')->name('editor.basic');
+Route::view('/', 'editor.basic')->name('editor.basic');
 Route::view('/editor/lifecycle', 'editor.lifecycle')->name('editor.lifecycle');
 Route::view('/editor/modal', 'editor.modal')->name('editor.modal');
 

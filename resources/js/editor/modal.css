@@ -1,189 +1,264 @@
-.modal-test {
-    max-width: 40rem;
-    margin: 0 auto;
-    padding: 1.5rem 1rem 3rem;
+.modal-page {
+    max-width: 48rem;
 }
 
-.modal-test__header {
+.modal-page__header {
     margin-bottom: 1.25rem;
 }
 
-.modal-test__title {
-    font-size: 1.375rem;
-    font-weight: 600;
-    margin: 0 0 0.35rem;
+.modal-page__title {
+    font-size: 1.75rem;
+    margin: 0 0 0.5rem;
+    color: var(--text-h);
 }
 
-.modal-test__intro {
+.modal-page__lede {
     margin: 0;
-    font-size: 0.875rem;
-    color: #555;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--text);
 }
 
-.modal-test__settings {
-    margin: 0 0 1rem;
-    padding: 0.85rem 1rem 1rem;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    background: #fff;
+.modal-page__controls {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--code-bg);
 }
 
-.modal-test__legend {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    padding: 0 0.25rem;
+.modal-page__controls:disabled,
+.modal-page__controls[disabled] {
+    opacity: 0.55;
+    pointer-events: none;
 }
 
-.modal-test__field {
-    margin-top: 0.75rem;
+.modal-page__section-title {
+    font-size: 1rem;
+    margin: 0 0 0.75rem;
+    color: var(--text-h);
 }
 
-.modal-test__field:first-of-type {
-    margin-top: 0.35rem;
-}
-
-.modal-test__label {
-    display: block;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-}
-
-.modal-test__radios {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-}
-
-.modal-test__radio {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.4rem;
-    font-size: 0.875rem;
-    cursor: pointer;
-}
-
-.modal-test__radio input {
-    margin-top: 0.2rem;
-}
-
-.modal-test__input {
-    font: inherit;
-    width: 6rem;
-    padding: 0.35rem 0.5rem;
-    border: 1px solid #d4d4d4;
-    border-radius: 6px;
-}
-
-.modal-test__hint {
-    margin: 0.4rem 0 0;
-    font-size: 0.75rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-.modal-test__meta {
+.modal-page__fieldset {
+    border: none;
+    margin: 0 0 0.75rem;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem 1rem;
+}
+
+.modal-page__fieldset legend {
+    width: 100%;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-h);
+    margin-bottom: 0.35rem;
+}
+
+.modal-page__radio {
+    display: flex;
     align-items: center;
-    font-size: 0.875rem;
-    margin: 0 0 0.75rem;
-}
-
-.modal-test__status {
-    color: #15803d;
-    font-size: 0.8125rem;
-}
-
-.modal-test__open {
-    font: inherit;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    color: var(--text-h);
     cursor: pointer;
-    padding: 0.5rem 1.1rem;
-    border-radius: 6px;
-    border: 1px solid #1a1a1a;
-    background: #1a1a1a;
-    color: #fff;
 }
 
-.modal-test__open:hover {
+.modal-page__select-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-h);
+}
+
+.modal-page__select-label select {
+    font: inherit;
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-h);
+    max-width: 12rem;
+}
+
+.modal-page__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--code-bg);
+}
+
+.modal-page__stats dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+}
+
+.modal-page__stats dd {
+    margin: 0.15rem 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-h);
+}
+
+.modal-page__open-btn {
+    font: inherit;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-border);
+    background: var(--accent-bg);
+    color: var(--text-h);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-page__open-btn:hover {
     opacity: 0.92;
 }
 
-.modal-test__open:disabled {
+.modal-page__open-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-.modal-test__dialog {
-    width: min(100vw - 2rem, 52rem);
-    max-height: min(92vh, 52rem);
+.modal-page__status {
+    min-height: 1.25rem;
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--accent);
+}
+
+.modal-page__dialog {
+    width: min(100vw - 2rem, 40rem);
+    max-height: min(92vh, 45rem);
     padding: 0;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 18px 50px rgb(0 0 0 / 0.18);
+    background: var(--bg);
+    box-shadow: 0 20px 50px rgb(0 0 0 / 0.2);
+    color: var(--text-h);
 }
 
-.modal-test__dialog::backdrop {
-    background: rgb(0 0 0 / 0.45);
+.modal-page__dialog::backdrop {
+    background: rgb(8 6 13 / 0.45);
 }
 
-.modal-test__dialog-inner {
+.modal-page__dialog-inner {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    max-height: min(92vh, 52rem);
+    max-height: min(92vh, 45rem);
 }
 
-.modal-test__dialog-header {
+.modal-page__dialog-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    padding: 0.65rem 1rem;
-    border-bottom: 1px solid #eee;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border);
     flex-shrink: 0;
 }
 
-.modal-test__dialog-title {
-    font-size: 1rem;
-    font-weight: 600;
+.modal-page__dialog-title {
     margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-h);
 }
 
-.modal-test__close {
+.modal-page__close-btn {
     font: inherit;
-    cursor: pointer;
-    padding: 0.35rem 0.65rem;
-    border-radius: 6px;
-    border: 1px solid #d4d4d4;
-    background: #fff;
-}
-
-.modal-test__close:hover {
-    background: #f5f5f5;
-}
-
-.modal-test__dialog-body {
-    padding: 0.75rem 1rem 1rem;
-    /* overflow: auto; */
-    min-height: 0;
-    flex: 1;
-    /* max-height test: cap scroll area; editor maxHeight also set via SDK when static */
-    /* max-height: var(--modal-body-max, min(70vh, 28rem)); */
-}
-
-.modal-test__editor-host {
-    min-height: 12rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
     border-radius: 8px;
-    border: 1px solid #e5e5e5;
-    background: #fff;
+    background: transparent;
+    color: var(--text-h);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-page__close-btn:hover {
+    background: var(--code-bg);
+}
+
+.modal-page__dialog-body {
+    padding: 1rem;
+    overflow: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.modal-page__editor-host {
+    min-height: 8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
     overflow: auto;
 }
 
-.modal-test__settings:disabled,
-.modal-test__settings[disabled] {
-    opacity: 0.55;
-    pointer-events: none;
+.modal-page__preview-label {
+    margin: 0.75rem 0 0.35rem;
+    font-size: 0.9rem;
+    color: var(--text-h);
+}
+
+.modal-page__preview {
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--code-bg);
+    color: var(--text-h);
+    min-height: 2.5rem;
+}
+
+.modal-page__dialog-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-page__footer-btn {
+    font: inherit;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+}
+
+.modal-page__log-section {
+    margin-top: 1.5rem;
+}
+
+.modal-page__log {
+    margin: 0;
+    padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+    max-height: 240px;
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg);
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--text-h);
+}
+
+.modal-page__log:empty::before {
+    content: 'Open the modal to see lifecycle events.';
+    display: block;
+    margin-left: -0.75rem;
+    color: var(--text);
+    list-style: none;
 }

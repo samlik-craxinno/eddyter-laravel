@@ -1,59 +1,106 @@
-@extends('layouts.minimal')
+@extends('layouts.app')
 
 @push('vite')
     @vite(['resources/js/editor/modal.js'])
 @endpush
 
-@section('title', 'Eddyter modal')
+@section('title', 'Modal editor')
 
 @section('content')
-    <main class="modal-test" data-api-key="{{ config('services.eddyter.api_key') }}">
-        <header class="modal-test__header">
-            <h1 class="modal-test__title">Modal editor</h1>
-            <p class="modal-test__intro">The editor mounts when the modal opens and is destroyed with <code>instance.destroy()</code> when it closes. Toolbar mode and max height apply on the next open.</p>
+    <div class="modal-page" data-api-key="{{ config('services.eddyter.api_key') }}">
+        <header class="modal-page__header">
+            <h1 class="modal-page__title">Modal editor</h1>
+            <p class="modal-page__lede">
+                The Eddyter instance is created only while the modal is open. Closing the modal
+                unmounts the editor and calls <code>destroy()</code> on the SDK instance.
+            </p>
         </header>
 
-        <fieldset class="modal-test__settings" id="modal-test-settings">
-            <legend class="modal-test__legend">Options (next open)</legend>
+        <section class="modal-page__controls" id="modal-test-settings" aria-label="Editor options">
+            <h2 class="modal-page__section-title">Toolbar &amp; scrolling</h2>
 
-            <div class="modal-test__field">
-                <span class="modal-test__label">Toolbar</span>
-                <div class="modal-test__radios">
-                    <label class="modal-test__radio">
-                        <input type="radio" name="toolbar-mode" value="sticky" checked>
-                        Sticky (floating when scrolling)
-                    </label>
-                    <label class="modal-test__radio">
-                        <input type="radio" name="toolbar-mode" value="static">
-                        Static (inline with editor)
-                    </label>
-                </div>
+            <fieldset class="modal-page__fieldset">
+                <legend>Toolbar mode</legend>
+                <label class="modal-page__radio">
+                    <input type="radio" name="toolbar-mode" value="sticky" checked>
+                    Sticky
+                </label>
+                <label class="modal-page__radio">
+                    <input type="radio" name="toolbar-mode" value="static">
+                    Static
+                </label>
+            </fieldset>
+
+            <label class="modal-page__select-label" for="modal-max-height">
+                <span>Editor max height (scrollable content)</span>
+                <select id="modal-max-height">
+                    <option value="200px">200px</option>
+                    <option value="320px" selected>320px</option>
+                    <option value="480px">480px</option>
+                </select>
+            </label>
+        </section>
+
+        <dl class="modal-page__stats">
+            <div>
+                <dt>Modal</dt>
+                <dd id="modal-state">closed</dd>
             </div>
-
-            <div class="modal-test__field">
-                <label class="modal-test__label" for="modal-max-height">Editor max height (px)</label>
-                <input class="modal-test__input" type="number" id="modal-max-height" min="120" max="900" value="280" step="10">
-                <p class="modal-test__hint">With <strong>static</strong> toolbar, the SDK applies this to the editable surface. With <strong>sticky</strong>, the outer box still uses this as a scroll cap for the modal body.</p>
+            <div>
+                <dt>Toolbar</dt>
+                <dd id="modal-toolbar-label">sticky</dd>
             </div>
-        </fieldset>
+            <div>
+                <dt>Max height</dt>
+                <dd id="modal-height-label">320px</dd>
+            </div>
+            <div>
+                <dt>Mount count</dt>
+                <dd id="modal-mount-count">0</dd>
+            </div>
+            <div>
+                <dt>Destroy count</dt>
+                <dd id="modal-destroy-count">0</dd>
+            </div>
+        </dl>
 
-        <p class="modal-test__meta">
-            <span>Modal sessions completed: <strong id="modal-cycle-count">0</strong></span>
-            <span id="modal-status" class="modal-test__status" aria-live="polite"></span>
-        </p>
+        <button type="button" class="modal-page__open-btn" id="modal-open-btn">
+            Open modal editor
+        </button>
 
-        <button type="button" class="modal-test__open" id="modal-open-btn">Open modal</button>
+        <p id="modal-status" class="modal-page__status" aria-live="polite"></p>
 
-        <dialog class="modal-test__dialog" id="editor-modal" aria-labelledby="modal-title">
-            <div class="modal-test__dialog-inner">
-                <!-- <header class="modal-test__dialog-header">
-                    <h2 class="modal-test__dialog-title" id="modal-title">Editor</h2>
-                    <button type="button" class="modal-test__close" id="modal-close-btn" aria-label="Close">Close</button>
-                </header> -->
-                <div class="modal-test__dialog-body">
-                    <div id="modal-editor-host" class="modal-test__editor-host"></div>
+        <dialog class="modal-page__dialog" id="editor-modal" aria-labelledby="modal-title">
+            <div class="modal-page__dialog-inner">
+                <header class="modal-page__dialog-header">
+                    <h2 class="modal-page__dialog-title" id="modal-title">Edit in modal</h2>
+                    <button
+                        type="button"
+                        class="modal-page__close-btn"
+                        id="modal-close-btn"
+                        aria-label="Close modal"
+                    >
+                        ×
+                    </button>
+                </header>
+
+                <div class="modal-page__dialog-body">
+                    <div id="modal-editor-host" class="modal-page__editor-host"></div>
+                    <h3 class="modal-page__preview-label">Preview</h3>
+                    <div id="modal-preview" class="modal-page__preview"></div>
                 </div>
+
+                <footer class="modal-page__dialog-footer">
+                    <button type="button" class="modal-page__footer-btn" id="modal-footer-close-btn">
+                        Close
+                    </button>
+                </footer>
             </div>
         </dialog>
-    </main>
+
+        <section class="modal-page__log-section">
+            <h2 class="modal-page__section-title">Lifecycle log</h2>
+            <ol class="modal-page__log" id="modal-lifecycle-log"></ol>
+        </section>
+    </div>
 @endsection
