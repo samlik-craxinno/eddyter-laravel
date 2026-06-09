@@ -1,5 +1,5 @@
-import { init } from 'richtext-core-sdk';
-import 'richtext-core-sdk/style.css';
+import { init } from '@eddyter/core';
+import '@eddyter/core/style.css';
 import './create.css';
 
 const STORAGE_KEY = 'richtext_blog_create_draft_v1';

@@ -30,8 +30,8 @@ let destroyCount = 0;
 async function loadSdk() {
     if (initFn) return initFn;
     const [mod] = await Promise.all([
-        import('richtext-core-sdk'),
-        import('richtext-core-sdk/style.css'),
+        import('@eddyter/core'),
+        import('@eddyter/core/style.css'),
     ]);
     initFn = mod.init;
     return initFn;

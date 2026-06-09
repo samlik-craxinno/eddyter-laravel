@@ -1,6 +1,6 @@
 import './basic.css';
-import { init } from 'richtext-core-sdk';
-import 'richtext-core-sdk/style.css';
+import { init } from '@eddyter/core';
+import '@eddyter/core/style.css';
 
 const STORAGE_THEME = 'basic-editor:theme';
 
@@ -8,7 +8,7 @@ const root = document.querySelector('.basic-page');
 const apiKey = root?.dataset.apiKey ?? '';
 const themeToggle = document.getElementById('basic-theme-toggle');
 
-/** @type {import('richtext-core-sdk').EddyterInstance | null} */
+/** @type {import('@eddyter/core').EddyterInstance | null} */
 let instance = null;
 let latestHtml = '<p>Start typing…</p>';
 

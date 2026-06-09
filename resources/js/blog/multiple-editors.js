@@ -1,5 +1,5 @@
-import { init } from 'richtext-core-sdk';
-import 'richtext-core-sdk/style.css';
+import { init } from '@eddyter/core';
+import '@eddyter/core/style.css';
 import './multiple-editors.css';
 
 const STORAGE_PREFIX = 'richtext_multi_editor_v1:';
